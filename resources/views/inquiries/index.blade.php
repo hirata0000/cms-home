@@ -1,5 +1,5 @@
 @extends('layouts.admin_base')
-@section('title', 'お問い合わせ一覧')
+@section('title', '管理画面TOP')
 @section('content')
 <div>
     <div class="pankuzu">
@@ -7,7 +7,7 @@
             <!-- 1つめ -->
             <li itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">
-                <a itemprop="item" href="http://localhost:8000/admin" class="pankuzucontent">
+                <a itemprop="item" href="/admin" class="pankuzucontent">
                     <span itemprop="name">TOP</span>
                 </a>
                 <meta itemprop="position" content="1" />
@@ -16,34 +16,54 @@
             <!-- 2つめ -->
             <li itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">
-                <a itemprop="item" href="/inquiries">
-                    <span itemprop="name">お問い合わせ一覧</span>
-                </a>
+                <span itemprop="name">お問い合わせ一覧</span>
                 <meta itemprop="position" content="2" />
             </li>
 
             <!-- 3つめ -->
             <!-- <li itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">
-                <a itemprop="item" href="子カテゴリーのURL">
-                    <span itemprop="name">アカウント新規登録</span>
+                <a itemprop="item" href="子カテゴリーのURL" class="pankuzucontent">
+                    <span itemprop="name">子カテゴリー名</span>
                 </a>
                 <meta itemprop="position" content="3" />
             </li> -->
         </ol>
     </div>
     <div class="contentHome">
-        <h2>HOME</h2>
-    
+
+        <div class="contentContainer">
+            <h2>お問い合わせ一覧</h2>
+        </div>
+
         <div class="HomeBox">
-            <div class="HomeTitleBox">
-                <h3 class="HomeTitle">アカウント</h3>
-                <a href="/users">アカウント一覧</a>
+            <div class="adminTableArea">
+                <table class="table">
+                    <thead class="tableThead">
+                        <tr>
+                            <th scope="col">編集</th>
+                            <th scope="col">ステータス</th>
+                            <th scope="col">会社名</th>
+                            <th scope="col">氏名</th>
+                            <th scope="col">電話番号</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tableTbody">
+                        @foreach($contacts as $contact)
+                        <tr>
+                            <td><a href="{{route('inquiries.edit',$contact->id)}}" class="tableCreateLink">編集</a></td>
+                            <td>{{$contact->status}}</td>
+                            <td>{{$contact->company}}</td>
+                            <td>{{$contact->name}}</td>
+                            <td>{{$contact->phone}}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
-            <div class="HomeTitleBox">
-                <h3 class="HomeTitle">お問い合わせ</h3>
-                <a href="/inquiries">お問い合わせ一覧</a>
-            </div>
+        </div>
+        <div class="nextPage">
+            {{ $contacts->links() }}
         </div>
     </div>
 </div>

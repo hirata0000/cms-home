@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('company',20);
-            $table->string('name',20);
+            $table->string('company', 20);
+            $table->string('name', 20);
             $table->string('phone');
             $table->string('mail');
             $table->date('birthday');

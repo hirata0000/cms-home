@@ -33,8 +33,9 @@
         </ol>
     </div>
     <div class="contentHome">
+        
         <div class="contentContainer">
-        <h2>HOME</h2>
+            <h2>HOME</h2>
         </div>
     
         <div class="HomeBox">
@@ -44,7 +45,7 @@
             </div>
             <div class="HomeTitleBox">
                 <h3 class="HomeTitle">お問い合わせ</h3>
-                <a href="">お問い合わせ一覧</a>
+                <a href="/inquiries">お問い合わせ一覧</a>
             </div>
         </div>
     </div>

@@ -7,7 +7,7 @@
             <!-- 1つめ -->
             <li itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">
-                <a itemprop="item" href="http://localhost:8000/admin" class="pankuzucontent">
+                <a itemprop="item" href="/admin" class="pankuzucontent">
                     <span itemprop="name">TOP</span>
                 </a>
                 <meta itemprop="position" content="1" />
@@ -16,7 +16,7 @@
             <!-- 2つめ -->
             <li itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">
-                <a itemprop="item" href="/users">
+                <a itemprop="item" href="/users" class="pankuzucontent">
                     <span itemprop="name">アカウント一覧</span>
                 </a>
                 <meta itemprop="position" content="2" />
@@ -25,9 +25,7 @@
             <!-- 3つめ -->
             <li itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">
-                <a itemprop="item" href="/users/create">
-                    <span itemprop="name">アカウント新規登録</span>
-                </a>
+                <span itemprop="name">アカウント新規登録</span>
                 <meta itemprop="position" content="3" />
             </li>
         </ol>
@@ -36,7 +34,7 @@
         <div class="contentContainer">
         <h2>アカウント新規登録</h2>
         </div>
-    
+
         <div class="HomeBox touroku">
             <section>
                 <div>

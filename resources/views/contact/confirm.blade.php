@@ -5,33 +5,33 @@
     <section class="confirm">
         <div class="contactMainBox">
             <div class="dataContentItem">
-                <p class="dataContentItemP">会社名:〇〇株式会社</p>
+                <p class="dataContentItemP">会社名:{{ $contact['company'] }}</p>
             </div>
             <div class="dataContentItem">
-                <p class="dataContentItemP">氏名</p>
+                <p class="dataContentItemP">氏名:{{ $contact['name'] }}</p>
             </div>
             <div class="dataContentItem">
-                <p class="dataContentItemP">電話番号</p>
+                <p class="dataContentItemP">電話番号:{{ $contact['phone'] }}</p>
             </div>
             <div class="dataContentItem">
-                <p class="dataContentItemP">メールアドレス</p>
+                <p class="dataContentItemP">メールアドレス:{{ $contact['mail'] }}</p>
             </div>
             <div class="dataContentItem">
-                <p class="dataContentItemP">生年月日</p>
+                <p class="dataContentItemP">生年月日:{{ $contact['birthday'] }}</p>
             </div>
             <div class="dataContentItem">
-                <p class="dataContentItemP">性別</p>
+                <p class="dataContentItemP">性別:{{ $contact['sex'] }}</p>
             </div>
             <div class="dataContentItem">
-                <p class="dataContentItemP">職業</p>
+                <p class="dataContentItemP">職業:{{ $contact['job'] }}</p>
             </div>
             <div class="dataContentItem">
-                <p class="dataContentItemP">お問い合わせ内容</p>
+                <p class="dataContentItemP">お問い合わせ内容:{{ $contact['contact'] }}</p>
             </div>
 
             <form action="{{route('contact.send')}}" method="POST">
                 @csrf
-                    @foreach ($validated as $key => $value)
+                    @foreach ($contact as $key => $value)
                     <input type="hidden" name="{{$key}}" value="{{$value}}">
                     @endforeach
                 <button type="submit" class="submitButton">送信する</button>

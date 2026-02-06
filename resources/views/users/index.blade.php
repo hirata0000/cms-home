@@ -16,9 +16,7 @@
             <!-- 2つめ -->
             <li itemprop="itemListElement" itemscope
                 itemtype="https://schema.org/ListItem">
-                <a itemprop="item" href="/users" class="pankuzucontent">
-                    <span itemprop="name">アカウント一覧</span>
-                </a>
+                <span itemprop="name">アカウント一覧</span>
                 <meta itemprop="position" content="2" />
             </li>
 

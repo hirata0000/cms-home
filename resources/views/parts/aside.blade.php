@@ -10,7 +10,7 @@
         <ul>
             <li class="aside_menu">
                 <i class="fa-solid fa-house-chimney"></i>
-                <a href="http://localhost:8000/admin">HOME</a>
+                <a href="/admin">HOME</a>
             </li>
             <li class="aside_menu">
                 <i class="fa-solid fa-envelopes-bulk"></i>
@@ -22,4 +22,9 @@
             </li>
         </ul>
     </nav>
+    <div class="aside_bottom">
+        <span class="aside_menu_bottom">
+            <a href="/contact">お問い合わせ（ユーザー）</a>
+        </span>
+    </div>
 </aside>

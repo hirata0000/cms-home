@@ -1,0 +1,22 @@
+includes:
+    - ./vendor/larastan/larastan/extension.neon
+
+parameters:
+
+    paths:
+        - app
+        - config
+        - database
+        - routes
+        - tests
+
+    # 0（緩い）〜 9（厳格）まで指定可能。まずは 5 くらいがおすすめ。
+    level: 5
+
+    # 解析から除外したいディレクトリがある場合に指定
+    # excludePaths:
+    #     - ./*/*/FileToBeExcluded.php
+
+    # チェックを無視したい特定のエラーメッセージがある場合に指定
+    # ignoreErrors:
+    #     - '#PHPDoc tag @var#.#'

@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use App\Models\Contact;
+use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    public function index()
+    public function index():view
     {
         return view('contact.index');
     }
-    public function confirm(Request $request)
+
+    public function confirm(Request $request):View|RedirectResponse
     {
         $validated = $request->validate([
             'company' => 'required|string|max:20',
@@ -24,11 +26,14 @@ class ContactController extends Controller
             'job' => 'required',
             'contact' => 'required|string',
         ]);
-        return view('contact.confirm',compact('validated'));
+        $contact = $request->all();
+
+        return view('contact.confirm', compact('contact'));
     }
-    public function send(Request $request)
+
+    public function send(Request $request):RedirectResponse
     {
-        $contact = new Contact();
+        $contact = new Contact;
         $contact->company = $request->company;
         $contact->name = $request->name;
         $contact->phone = $request->phone;
@@ -39,8 +44,6 @@ class ContactController extends Controller
         $contact->contact = $request->contact;
         $contact->save();
 
-        return view('contact.send',['contact'=> $contact]);
+        return view('contact.send', ['contact' => $contact]);
     }
 }
-
-

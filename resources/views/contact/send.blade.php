@@ -1,7 +1,6 @@
 @extends('layouts.user_base')
 @section('title','送信完了')
 @section('content')
-
     <section class="send">
         <div class="contactMainBox">
             <div class="sendMessageBox">
